@@ -3961,7 +3961,7 @@ input, select, textarea {
   position: absolute;
   top: 20px;
   right: 35px;
-  color: white;
+  color: lightgray;
   font-size: 40px;
   text-decoration: none;
 }
