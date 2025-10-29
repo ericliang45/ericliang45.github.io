@@ -3961,11 +3961,15 @@ input, select, textarea {
   position: absolute;
   top: 20px;
   right: 35px;
-  color: lightgray;
+  color: slategray;
   font-size: 40px;
   text-decoration: none;
 }
 
+.lightbox .close:hover,
+.lightbox .close:focus {
+  color: darkgray; /* hover/tap color */
+}
 
 /* added by Eric , h1, h2, h3, h4, h5, h6 */ 
 body, input, select, textarea, p {
