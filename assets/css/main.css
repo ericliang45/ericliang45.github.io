@@ -114,13 +114,20 @@ input, select, textarea {
 
 /* Type */
 
+	@font-face {
+	  font-family: "KaiTiCustom";
+	  src: local("KaiTi"), local("STKaiti"), local("Kaiti SC"), local("SimKai"), local("Noto Serif SC");
+	  unicode-range: U+4E00-9FFF;
+	}
+
 	body, input, select, textarea {
 		color: rgba(255, 255, 255, 0.55);
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: system-ui, "KaiTiCustom", Arial, Helvetica, sans-serif; /* edited by Eric */
 		font-size: 16.5pt;
 		font-weight: normal;
 		line-height: 1.75;
 	}
+
 
 		@media screen and (max-width: 1680px) {
 
@@ -2559,6 +2566,15 @@ input, select, textarea {
 					color: #953d75;
 				}
 
+				/* copied from style 3 */
+				.wrapper.style4 .icon.major:before {
+					color: #b74e91;
+				}
+
+				.wrapper.style4-alt .icon.major:before {
+					color: #953d75;
+				}
+
 /* Image */
 
 	.image {
@@ -3063,13 +3079,14 @@ input, select, textarea {
 				opacity: 1;
 			}
 
-		.spotlights > section:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.05);
+		.spotlights > section:nth-of-type(2n) {
+			background-color: rgba(0, 0, 0, 0.14);
 		}
 
-		.spotlights > section:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.1);
+		.spotlights > section:nth-of-type(2n+1) {
+			background-color: rgba(0, 0, 0, 0.07);
 		}
+
 
 		.spotlights > section.inactive > .image:before,
 		body.is-preload .spotlights > section > .image:before {
@@ -3260,6 +3277,15 @@ input, select, textarea {
 		}
 
 		.wrapper.style3-alt {
+			background-color: #953d75;
+		}
+
+		/* copied from style 3 */
+		.wrapper.style4 {
+			background-color: #b74e91;
+		}
+
+		.wrapper.style4-alt {
 			background-color: #953d75;
 		}
 
@@ -3465,7 +3491,7 @@ input, select, textarea {
 /* Wrapper (main) */
 
 	#sidebar + #wrapper {
-		margin-left: 18em;
+		margin-left: 12em; /* edited by Eric */
 	}
 
 		@media screen and (max-width: 1280px) {
@@ -3492,7 +3518,7 @@ input, select, textarea {
 /* Footer */
 
 	#sidebar + #wrapper + #footer {
-		margin-left: 18em;
+		margin-left: 12em;
 	}
 
 		@media screen and (max-width: 1280px) {
@@ -3533,7 +3559,7 @@ input, select, textarea {
 		position: fixed;
 		text-align: right;
 		top: 0;
-		width: 18em;
+		width: 12em; /* edited by Eric */
 		z-index: 10000;
 	}
 
@@ -3907,3 +3933,42 @@ input, select, textarea {
 			}
 
 		}
+
+/* for clickable enlarged image */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox img {
+  display: block;
+  margin: 5% auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox:target {
+  display: block;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+
+/* added by Eric , h1, h2, h3, h4, h5, h6 */ 
+body, input, select, textarea, p {
+  font-size: 110% !important;
+}
+
